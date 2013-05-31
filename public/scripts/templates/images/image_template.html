@@ -1,0 +1,46 @@
+<div class="img-box {{container}} collapsed {{linked}} outer-shadow" id="img-{{id}}">
+  <div class="wrapper {{container}} img">
+    <div class="img" style="position:absolute;top:50%;right:50%">
+      <img src="{{path}}" style="margin-top:{{topOffset}}px;margin-right:{{rightOffset}}px;">
+    </div>
+  </div>
+  <div class="wrapper {{container}}">
+    <nav class="toolbar">
+      <ul>
+        <div class="canvas left">
+          <li class="collapsed left" data-tab="comments">
+            <a href="#" class="iconic hash" id="comments-{{id}}"></a>
+          </li>
+        </div>
+        <div class="canvas">
+          <li class="collapsed middle" data-tab="linktab">
+            <a href="{{link}}" class="iconic link" id="link-{{id}}"></a>
+          </li>
+        </div>
+        <div class="canvas">
+          <li class="collapsed right" data-tab="fav">
+            <a href="#" class="iconic star" id="fav-{{id}}"></a>
+          </li>
+        </div>
+      </ul>
+    </nav>
+    <div class ="navtab {{container}} hide comments">
+      <form>
+        <textarea id="input-comment-{{id}}" placeholder="Comment and add tags by typing #[...]"></textarea>
+        <button class ="btn" id="submit-comment-{{id}}">Comment</button>
+      </form>
+      <div class ="comments-container">
+        <ul id="comments-container-{{id}}">
+        </ul>
+      </div>
+    </div>
+    <div class ="navtab {{container}} hide linktab">
+      <form>
+        <label>Know the source? Add it here
+          <input class="link-input" />
+          <button class="btn" id="source-button">Add source</button>
+        </label>
+      </form>
+    </div>
+  </div>
+</div>

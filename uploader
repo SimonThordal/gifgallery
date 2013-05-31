@@ -1,0 +1,25 @@
+#!/bin/bash
+FILES=./tp_downloads/*
+# Redis database used for md5sums
+database=1
+for f in $FILES
+do
+  echo $f
+  tempSum=$(cksum $f)
+  sum=$(cut -d ' ' -f 1 <<< "$tempSum")
+  echo $sum
+  new=`redis-cli -n $database sadd "md5sums" "$sum"`
+  if [ "$new" -eq "1" ]
+  then
+    echo "Uploading $f file..."
+    curl -F image=@$f http://localhost:4711/images
+    if [ "$?" -ne "0" ]
+    then
+      redis-cli -n $database srem "md5sums" "$sum"
+    fi
+  else
+    echo "Deleting file $f..."
+    rm $f
+  fi
+done
+

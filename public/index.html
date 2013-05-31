@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Image Viewer</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/toastr.css">
+    <link rel="stylesheet" href="css/iconic_fill.css">
+</head>
+<body>
+  <div class="background">
+    <div id="main-window">
+      <div class="topbar">
+        <div class="item logo"></div>
+        <div class="item searchfield">
+          Search tags:
+          <div id="applied-tags" class="applied">
+            <input id="searchfield" class="typeahead"\>
+          </div>
+          <div class="sort">Sort:
+            <div class="criteria">
+              <p data-criteria="popularity">Popularity</p>/<p class="active" data-criteria="date">Date</p>
+            </div>
+          </div>
+        </div>
+        <div class="item categories">
+          <div id="popular-tags" class="popular">Popular tags
+          </div>
+        </div>
+      </div>
+      <div class="main-container">
+        <div id="image-container">
+
+        </div>
+      </div>
+    </div>
+    <script data-main="scripts/main" src="scripts/require.js"></script>
+  </div>
+</body>
+</html>

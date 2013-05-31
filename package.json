@@ -1,0 +1,12 @@
+{
+  "name": "ngallery",
+  "version": "0.0.1",
+  "dependencies": {
+    "express": "2.5.x",
+    "gm": "1.8.x",
+    "path": "0.4.x",
+    "redis": "0.8.x",
+    "winston": "0.6.x",
+    "underscore": "1.4.x"
+  }
+}
